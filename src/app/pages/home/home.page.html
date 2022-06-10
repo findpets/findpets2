@@ -1,0 +1,49 @@
+<ion-content >
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+    FindPets
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+ 
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>¿Quiénes Somos?</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+    En FindPets queremos lo mejor para todos los animales. Aquí podrás adoptar a una mascota o encontrarla en caso de que se haya perdido.
+    </ion-card-content>
+ 
+  </ion-card>
+
+  <ion-card >
+    <ion-card-content >
+      Conoce más sobre la fundación
+      <img alt="" src="assets/img/opa.png"
+      width="80" height="80">
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-label class="ion-text-center">
+    <h2>¿Empezamos?</h2>
+  </ion-label>
+  <div id="content" class="ion-text-center">
+      <ion-button expand="block" class="btn btn1" (click)="adoptar()">
+      <ion-icon name="paw-outline"></ion-icon> Adoptar
+      </ion-button>
+    <ion-button expand="block" class="btn btn1" (click)="perdido()">
+      <ion-icon name="heart-half-outline"></ion-icon>Perdido</ion-button>
+  </div>
+
+</ion-content>

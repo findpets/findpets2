@@ -1,0 +1,84 @@
+<ion-content>
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+    FindPets
+    </ion-title>
+
+  </ion-toolbar>
+</ion-header>
+   
+  <ion-toolbar>
+    <ion-row>
+      <ion-img src="assets/img/mapaFP.jpg"></ion-img>
+      <div id="label" class="ion-text-center"></div>
+      <ion-col col-6>
+        <ion-button  (click)="historial()" shape="round" fill="outline">
+          <ion-icon slot="start" name="eye-outline"></ion-icon>
+        </ion-button>    
+      </ion-col>
+        </ion-row>
+      </ion-toolbar>
+    
+  <ion-toolbar>
+    <p>Paso 1: Foto de tu mascota</p>
+    <ion-button fill ="clear" expand="full" color="light" (click)="selectImage()">
+      <ion-icon slot ="start" name="camera"></ion-icon>
+     Ingresa una foto
+    </ion-button>
+  </ion-toolbar>
+  
+  <ion-list *ngIf ="images.lenght == 0"> 
+      <ion-item *ngFor ="let file of images">
+      <ion-thumbnail>
+        <ion-img [src] ="file.data"></ion-img>
+      </ion-thumbnail>
+      <ion-label class ="ion-text-wrap">
+        {{file.name}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  
+    <ion-toolbar >
+      <p>Paso 2: ¿Dónde se perdió?</p>
+      <ion-searchbar [(ngModel)]="autocomplete.input" (ionInput)="UpdateSearchResults()" placeholder="Search for a place"  (ionClear)="ClearAutocomplete()"></ion-searchbar>
+    </ion-toolbar>
+    <ion-list [hidden]="autocompleteItems.length == 0">
+      <ion-item *ngFor="let item of autocompleteItems" tappable (click)="SelectSearchResult(item)">
+        {{ item.description }}
+      </ion-item>
+    </ion-list>
+    
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button (click)="ShowCords()" ion-fab color="tertiary">
+        <ion-icon name="information-circle-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    
+    <div class="map-wrapper" style="height: 85%;">      
+      <div id="map_center">
+        <ion-icon name="pin" size="large" color="danger"></ion-icon>      
+      </div>
+      <div #map id="map"  style="height: 85%;"></div>
+    </div>   
+    
+    
+  <ion-toolbar> 
+    <p>Paso 3: Haz click en el corazón, para ingresar más información</p>
+  </ion-toolbar> 
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed"> 
+    <ion-fab-button (click)="addFind()">
+      <ion-icon name="heart-dislike-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed"> 
+    <ion-fab-button  (click)="volver()" >
+      <ion-icon name="arrow-undo-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
