@@ -67,7 +67,7 @@ addUserr(datos: UserI){
   return addDoc(notesRef, datos)}
 
 addFind(find:Perdidos){
-    const findRef = collection(this.fireservice,'Perdidos');
+    const findRef = collection(this.fireservice,'perdidos');
     return addDoc(findRef,find)
     }
 
@@ -83,7 +83,7 @@ addUser(adop: Adoptame){
   return collectionData(usuaRef,{idField:'id'}) as Observable<Adoptame[]> ;
 }
 getFind(): Observable<Perdidos[]>{
-  const findRef = collection(this.fireservice,'Perdidos');
+  const findRef = collection(this.fireservice,'perdidos');
   return collectionData(findRef,{idField:'id'}) as Observable<Perdidos[]> ;
   }
 

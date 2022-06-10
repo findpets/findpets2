@@ -17,8 +17,8 @@
     <ion-row>
 
       <ion-list>
-        <ion-item *ngFor="let find of perdidos" (click)="openNote(note)">
-          <ion-item *ngFor="let file of images" (click)="openNote(note)">
+        <ion-item *ngFor="let find of perdidos" >
+          <ion-item *ngFor="let file of images" >
 
             <ion-label>
               <img [src]="file.data">

@@ -1,14 +1,15 @@
 {
+  "projects": {
+    "default": "findpets551",
+    "findpets": "findpets551"
+  },
   "targets": {
-    "findpet550": {
+    "findpets551": {
       "hosting": {
         "app": [
-          "findpet550"
+          "findpets551"
         ]
       }
     }
-  },
-  "projects": {
-    "default": "findpet550"
   }
 }
